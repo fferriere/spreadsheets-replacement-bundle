@@ -20,9 +20,18 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('fferriere_spreadsheets_replacement');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $defaultPatternPath = dirname(__DIR__) . DIRECTORY_SEPARATOR
+                            . 'Resources' . DIRECTORY_SEPARATOR
+                            . 'config' . DIRECTORY_SEPARATOR
+                            . 'replacementPattern.php';
+
+        $rootNode
+            ->children()
+                ->scalarNode('data_path')->end()
+                ->scalarNode('replacement_pattern_path')
+                    ->defaultValue($defaultPatternPath)
+                ->end()
+            ->end();
 
         return $treeBuilder;
     }

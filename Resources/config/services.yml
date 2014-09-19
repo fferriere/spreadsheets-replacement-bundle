@@ -1,7 +1,16 @@
 parameters:
-#    fferriere_spreadsheets_replacement.example.class: Fferriere\Bundle\SpreadsheetsReplacementBundle\Example
+    fferriere_spreadsheets_replacement.replacer.class: Fferriere\SpreadsheetsReplacement\Replacer\CsvReplacer
+    fferriere_spreadsheets_replacement.sheet.class: Fferriere\SpreadsheetsReplacement\Sheet\CsvSheet
+    fferriere_spreadsheets_replacement.converter.class: Fferriere\SpreadsheetsReplacement\Converter\Converter
+    fferriere_spreadsheets_replacement.hydrator.class: Fferriere\SpreadsheetsReplacement\Hydrator\Hydrator
 
 services:
-#    fferriere_spreadsheets_replacement.example:
-#        class: %fferriere_spreadsheets_replacement.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    fferriere_spreadsheets_replacement.sheet:
+        class: %fferriere_spreadsheets_replacement.sheet.class%
+    fferriere_spreadsheets_replacement.converter:
+        class: %fferriere_spreadsheets_replacement.converter.class%
+    fferriere_spreadsheets_replacement.hydrator:
+        class: %fferriere_spreadsheets_replacement.hydrator.class%
+    fferriere_spreadsheets_replacement.replacer:
+        class: %fferriere_spreadsheets_replacement.replacer.class%
+        arguments: [@fferriere_spreadsheets_replacement.sheet, @fferriere_spreadsheets_replacement.converter]

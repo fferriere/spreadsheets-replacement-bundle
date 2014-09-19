@@ -1,3 +1,3 @@
 fferriere_spreadsheets_replacement_homepage:
-    path:     /hello/{name}
-    defaults: { _controller: FferriereSpreadsheetsReplacementBundle:Default:index }
+    path:     /
+    defaults: { _controller: FferriereSpreadsheetsReplacementBundle:Default:replace }
