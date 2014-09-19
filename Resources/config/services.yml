@@ -1,0 +1,7 @@
+parameters:
+#    fferriere_spreadsheets_replacement.example.class: Fferriere\Bundle\SpreadsheetsReplacementBundle\Example
+
+services:
+#    fferriere_spreadsheets_replacement.example:
+#        class: %fferriere_spreadsheets_replacement.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
